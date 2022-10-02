@@ -1,0 +1,276 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Sun Oct  2 11:10:58 2022
+# Process ID: 11004
+# Current directory: D:/VivadoProj/RISC-V-CPU
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2900 D:\VivadoProj\RISC-V-CPU\RISC-V-CPU.xpr
+# Log file: D:/VivadoProj/RISC-V-CPU/vivado.log
+# Journal file: D:/VivadoProj/RISC-V-CPU\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.xpr
+update_compile_order -fileset sources_1
+add_files -norecurse {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/iram.mem D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/miriscv_defines.vh}
+add_files -norecurse {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/RF.v D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/ALU_RISCV.v D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/RAM.v D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/ALU_RISCV_tb.v D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v}
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top CPU [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top RF [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+refresh_design
+update_files -from_files D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/ALU_tb.v -to_files D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/ALU_RISCV_tb.v -filesets [get_filesets *]
+update_files -from_files D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/ALU.v -to_files D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/ALU_RISCV.v -filesets [get_filesets *]
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top CPU [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+close_design
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top CPU [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+refresh_design
+refresh_design
+refresh_design
+refresh_design
+refresh_design
+refresh_design
+refresh_design
+refresh_design
+launch_simulation
+close [ open D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU_tb.v w ]
+add_files D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU_tb.v
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top CPU_tb [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+launch_simulation
+launch_simulation
+launch_simulation
+source ALU_RISCV_tb.tcl
+run 10 us
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+close_sim
+close_design
+launch_simulation
+source ALU_RISCV_tb.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top CPU_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+launch_simulation
+source CPU_tb.tcl
+close_sim
+launch_simulation
+source CPU_tb.tcl
+close_sim
+launch_simulation
+source CPU_tb.tcl
+close_sim
+launch_simulation
+source CPU_tb.tcl
+close_sim
+launch_simulation
+source CPU_tb.tcl
+relaunch_sim
+relaunch_sim
+close_sim
+launch_simulation
+source CPU_tb.tcl
+add_bp {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} 63
+remove_bps -file {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} -line 63
+add_bp {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} 63
+remove_bps -file {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} -line 63
+add_bp {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} 63
+relaunch_sim
+add_bp {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} 64
+remove_bps -file {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} -line 63
+run all
+run all
+add_bp {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/RAM.v} 14
+run all
+add_bp {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} 66
+add_bp {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} 69
+remove_bps -file {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} -line 64
+add_bp {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} 65
+remove_bps -file {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} -line 66
+add_bp {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} 67
+run all
+run all
+relaunch_sim
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+relaunch_sim
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+close_sim
+launch_simulation
+source CPU_tb.tcl
+remove_bps -file {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} -line 65
+remove_bps -file {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} -line 67
+remove_bps -file {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} -line 69
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+remove_bps -file {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/RAM.v} -line 14
+add_bp {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} 67
+add_bp {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} 66
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+run all
+add_bp {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} 69
+run all
+run all
+relaunch_sim
+run all
+run all
+add_bp {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/ALU.v} 18
+run all
+run all
+relaunch_sim
+run all
+run all
+run all
+run all
+run all
+add_bp {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/RF.v} 24
+run all
+relaunch_sim
+run all
+run all
+run all
+run all
+run all
+run all
+close_sim
+launch_simulation
+source CPU_tb.tcl
+remove_bps -file {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} -line 66
+remove_bps -file {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} -line 67
+remove_bps -file {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} -line 69
+run all
+remove_bps -file {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/ALU.v} -line 18
+run all
+remove_bps -file {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/RF.v} -line 24
+run all
+add_bp {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} 69
+relaunch_sim
+run all
+run all
+run all
+run all
+relaunch_sim
+run all
+run all
+relaunch_sim
+run all
+run all
+relaunch_sim
+run all
+run all
+run all
+run all
+relaunch_sim
+remove_bps -file {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} -line 69
+run all
+add_bp {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} 67
+add_bp {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} 66
+remove_bps -file {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} -line 66
+run all
+run all
+add_bp {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} 69
+run all
+relaunch_sim
+relaunch_sim
+remove_bps -file {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} -line 67
+remove_bps -file {D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v} -line 69
+run all
