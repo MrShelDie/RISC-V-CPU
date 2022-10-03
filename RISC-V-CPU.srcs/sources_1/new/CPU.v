@@ -23,7 +23,6 @@ module CPU(
   wire        alu_flag;
 
   RAM iram (
-    .clk_i  ( clk_i ),
     .addr_i ( PC    ),
     
     .rd_o   ( bus   )
@@ -60,7 +59,7 @@ module CPU(
       default: rf_wd <= 0;
     endcase
   
-  always @( negedge clk_i or posedge rst_i )
+  always @( posedge clk_i or posedge rst_i )
     if ( rst_i )
       PC <= 8'd0;
     else if ( bus[31] || ( bus[30] && alu_flag ) )
