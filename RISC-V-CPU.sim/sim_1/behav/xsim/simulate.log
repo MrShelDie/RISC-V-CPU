@@ -1,0 +1,61 @@
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+Test started...
+
+reg:   1, loaded:   1, rd1:   1, rd2:   1
+good
+
+reg:   2, loaded:   2, rd1:   2, rd2:   2
+good
+
+reg:   3, loaded:   3, rd1:   3, rd2:   3
+good
+
+reg:   4, loaded:   4, rd1:   4, rd2:   4
+good
+
+reg:   5, loaded:   5, rd1:   5, rd2:   5
+good
+
+reg:   6, loaded:   6, rd1:   6, rd2:   6
+good
+
+reg:   7, loaded:   7, rd1:   7, rd2:   7
+good
+
+reg:   8, loaded:   8, rd1:   8, rd2:   8
+good
+
+reg:   9, loaded:   9, rd1:   9, rd2:   9
+good
+
+reg:  10, loaded:  10, rd1:  10, rd2:  10
+good
+
+reg:  11, loaded:  11, rd1:  11, rd2:  11
+good
+
+reg:  12, loaded:  12, rd1:  12, rd2:  12
+good
+
+reg:  13, loaded:  13, rd1:  13, rd2:  13
+good
+
+reg:  14, loaded:  14, rd1:  14, rd2:  14
+good
+
+reg:  15, loaded:  15, rd1:  15, rd2:  15
+good
+
+reg:  16, loaded:  16, rd1:  16, rd2:  16
+good
+
+reg:  17, loaded:  17, rd1:  17, rd2:  17
+good
+
+reg:  18, loaded:  18, rd1:  18, rd2:  18
+good
+
+reg:  19, loaded:  19, rd1:  19, rd2:  19
+good
+

@@ -21,7 +21,7 @@ module CPU_tb;
   initial
     begin
       clk <= 0;
-      IN  <= 32'd0;
+      IN  <= 32'd11;
     
       rst <= 1;
       # 30

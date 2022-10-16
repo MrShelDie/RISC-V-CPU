@@ -4,7 +4,7 @@ module CPU(
   input         clk_i,
   input         rst_i,
   
-  input [31:0]  IN_i,
+  input  [31:0] IN_i,
   
   output [31:0] OUT_o
 );
