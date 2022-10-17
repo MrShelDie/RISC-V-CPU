@@ -1,10 +1,9 @@
 
+
 # RISC-V-CPU
 The project is dedicated to the development of a processor with a RISC architecture that can be programmed in a high-level C language. The project is carried out for educational purposes and is based on a course of lectures and laboratory work on the architecture of microprocessor systems of the Moscow University of Electronic Technologies
 ![](https://img.shields.io/badge/Education%20Project-%F0%9F%93%96-orange) ![No maintenance](http://unmaintained.tech/badge.svg)   
 ![](https://img.shields.io/github/last-commit/MrShelDie/RISC-V-CPU) ![](https://img.shields.io/badge/Done-20%25-orange) 
-
----
 
 ## Getting Started
 
@@ -13,7 +12,7 @@ The project is dedicated to the development of a processor with a RISC architect
 <div/>
 After installation, copy the current repository and open the project file (RISC-CPU.spy) in Vivado.
 
-### RISC-V processor Microarchitecture
+## RISC-V processor Microarchitecture
 
 The following is the RISC-V processor microarchitecture. The PC register (Program Counter - instruction counter) is connected to the address input of the instruction memory. The instruction being read is decoded by the main decoder, as a result of which it exposes control signals for all processor blocks (multiplexers, ALU, memory interface).
 
@@ -27,10 +26,7 @@ The following is the RISC-V processor microarchitecture. The PC register (Progra
 
 	In the figure shown, the `mem_size_o` and `mem_req_o` signals are combined into a single signal, however, when describing the module, these will be two different signals.
 
-
----
-
-### RISC-V Instruction Set (RV32I)
+## RISC-V Instruction Set (RV32I)
 
 <img src="https://github.com/MrShelDie/RISC-V-CPU/blob/master/img/rv32i_spec.png?raw=true"/>
 
