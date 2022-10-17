@@ -9,7 +9,7 @@ The project is dedicated to the development of a processor with a RISC architect
 
 The following is the RISC-V processor microarchitecture. The PC register (Program Counter - instruction counter) is connected to the address input of the instruction memory. The instruction being read is decoded by the main decoder, as a result of which it exposes control signals for all processor blocks (multiplexers, ALU, memory interface).
 
-<img src="https://github.com/MPSU/APS/blob/technical/Labs/Pic/uarch_md.png?raw=true"/>
+<img src="https://github.com/MrShelDie/RISC-V-CPU/blob/master/img/uarch_md.png?raw=true"/>
 
 - Data memory:
 	- stores the data that the program works with,
@@ -24,7 +24,7 @@ The following is the RISC-V processor microarchitecture. The PC register (Progra
 
 ### RISC-V Instruction Set (RV32I)
 
-<img src="https://github.com/MPSU/APS/blob/technical/Other/Pic/rv32i_spec.png?raw=true"/>
+<img src="https://github.com/MrShelDie/RISC-V-CPU/blob/master/img/rv32i_spec.png?raw=true"/>
 
 <div align="left">
 	For details, read  <a href="https://riscv.org/wp-content/uploads/2017/05/riscv-spec-v2.2.pdf">this</a>.
