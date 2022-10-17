@@ -1,3 +1,4 @@
+
 # RISC-V-CPU
 The project is dedicated to the development of a processor with a RISC architecture that can be programmed in a high-level C language. The project is carried out for educational purposes and is based on a course of lectures and laboratory work on the architecture of microprocessor systems of the Moscow University of Electronic Technologies
 ![](https://img.shields.io/badge/Education%20Project-%F0%9F%93%96-orange) ![No maintenance](http://unmaintained.tech/badge.svg)   
@@ -27,7 +28,16 @@ The following is the RISC-V processor microarchitecture. The PC register (Progra
 <img src="https://github.com/MrShelDie/RISC-V-CPU/blob/master/img/rv32i_spec.png?raw=true"/>
 
 <div align="left">
-	For details, read  <a href="https://riscv.org/wp-content/uploads/2017/05/riscv-spec-v2.2.pdf">this</a>.
+	For details, read  <a href="https://riscv.org/wp-content/uploads/2017/05/riscv-spec-v2.2.pdf#chapter.2">this</a>.
 <div/>
 
+## Getting Started
 
+<div align="left">
+	To start the project, you will need to install <a href="https://www.xilinx.com/products/design-tools/vivado/vivado-ml.html">Vivado</a>.
+<div/>
+After installation, copy the current repository and open the project file (RISC-CPU.spy) in Vivado.
+
+## Authors
+
+* **Nikolay Ivchenko** - mrsheldie@mail.ru
