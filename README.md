@@ -29,5 +29,6 @@ In the figure shown, the `mem_size_o` and `mem_req_o` signals are combined into 
 	<img src="https://github.com/MPSU/APS/blob/technical/Other/Pic/rv32i_spec.png?raw=true"/>
 <div/>
 
+	
 For details, read  <a href="https://riscv.org/wp-content/uploads/2017/05/riscv-spec-v2.2.pdf">this</a>.
 
