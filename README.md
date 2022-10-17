@@ -10,7 +10,7 @@ The project is dedicated to the development of a processor with a RISC architect
 <div align="left">
 	To start the project, you will need to install <a href="https://www.xilinx.com/products/design-tools/vivado/vivado-ml.html">Vivado</a>.
 <div/>
-After installation, copy the current repository and open the project file (RISC-CPU.spy) in Vivado.
+After installation, clone the current repository and open the project file (RISC-CPU.spy) in Vivado.
 
 ## RISC-V processor Microarchitecture
 
