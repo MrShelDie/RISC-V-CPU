@@ -26,6 +26,8 @@ The following is the RISC-V processor microarchitecture. The PC register (Progra
 
 <img src="https://github.com/MPSU/APS/blob/technical/Other/Pic/rv32i_spec.png?raw=true"/>
 
+<div align="left">
 	For details, read  <a href="https://riscv.org/wp-content/uploads/2017/05/riscv-spec-v2.2.pdf">this</a>.
+<div/>
 
 
