@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module RF_tb;
+module reg_file_tb;
 
   reg         clk;
   
@@ -14,7 +14,7 @@ module RF_tb;
   wire [31:0] rd1;
   wire [31:0] rd2;
 
-  RF rf (
+  reg_file rf (
     .clk_i   ( clk   ),
     
     .addr1_i ( addr1 ),
@@ -45,10 +45,17 @@ module RF_tb;
           
           #10 clk = 1; 
         end
+        
+        #10 clk = 0;
+                  
+        wd3 = 32'd3;
+        addr3 = 32'd0;
+                  
+        #10 clk = 1; 
       
       we3 = 0;
       
-      for (i = 1; i < 32; i = i + 1)
+      for (i = 0; i < 32; i = i + 1)
         begin
           #10      
           addr1 = i;

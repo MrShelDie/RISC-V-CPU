@@ -2,7 +2,7 @@
 
 `timescale 1ns / 1ps
 
-module ALU_RISCV_tb;
+module alu_tb;
 
   reg  [4:0]  opcode;
   reg  [31:0] a;
@@ -36,7 +36,7 @@ module ALU_RISCV_tb;
     end
   endtask
 
-  ALU alu(
+  alu alu(
     .opcode_i ( opcode ),
     .a_i      ( a      ),
     .b_i      ( b      ),

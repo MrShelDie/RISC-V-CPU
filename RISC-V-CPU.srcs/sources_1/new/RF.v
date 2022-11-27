@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module RF(
+module reg_file(
   input         clk_i,
   
   input  [4:0]  addr1_i,
@@ -19,8 +19,9 @@ module RF(
   assign rd1_o = ( addr1_i ) ? ( regs[addr1_i] ) : ( 32'd0 );
   assign rd2_o = ( addr2_i ) ? ( regs[addr2_i] ) : ( 32'd0 );
 
-  always @( posedge clk_i )
+  always @( posedge clk_i ) begin
     if ( we3_i )
       regs[addr3_i] <= wd3_i;
+  end
 
 endmodule

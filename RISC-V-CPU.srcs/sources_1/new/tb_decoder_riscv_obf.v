@@ -33,7 +33,7 @@ module tb_decoder_riscv_obf();
   reg                        dw4BF7GiQnff;
   reg                        s4fORqHpkpve;
 
-  decoder_riscv dut (
+  main_decoder dut (
     .fetched_instr_i  (UmWx5ulXQ5IP),
     .ex_op_a_sel_o    (I2r97V7muunE),
     .ex_op_b_sel_o    (R5si3NNGkJJI),

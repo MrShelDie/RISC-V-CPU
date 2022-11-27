@@ -1,35 +1,26 @@
 `timescale 1ns / 1ps
 
-module CPU_tb;
+module cpu_tb;
 
   reg         clk;
   reg         rst;
-  
-  reg  [31:0] IN;
-  
-  wire [31:0] OUT;
     
-  CPU cpu(
+  cpu cpu(
     .clk_i ( clk ),
-    .rst_i ( rst ),
-    
-    .IN_i  ( IN  ),
-    
-    .OUT_o ( OUT )
+    .rst_i ( rst )
   );
   
-  initial
-    begin
-      clk <= 0;
-      IN  <= 32'd11;
-    
-      rst <= 1;
+  initial begin
+      rst = 1;
       # 30
-      rst <= 0;
+      rst = 0;   
+  end
+
+  initial begin
+    clk = 1'b0;
     
-      forever
-        #10 clk <= !clk;
-          
-    end
+    forever
+      #10 clk = ~clk;
+  end
 
 endmodule

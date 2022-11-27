@@ -2,8 +2,9 @@
 
 `timescale 1ns / 1ps
 
-module decoder_riscv(
+module main_decoder(
   input       [31:0]  fetched_instr_i,
+  
   output  reg [1:0]   ex_op_a_sel_o,
   output  reg [2:0]   ex_op_b_sel_o, 
   output  reg [4:0]   alu_op_o,
@@ -135,9 +136,6 @@ module decoder_riscv(
                         end
         `MISC_MEM_OPCODE: begin end
         `SYSTEM_OPCODE:   begin end
-//                          if (fetched_instr_i[31:7] != 25'b0
-//                              || { fetched_instr_i[31:21], fetched_instr_i[19:7] } != 24'b0)
-//                                illegal_instr_o <= 1;
         default:
           illegal_instr_o <= 1;
       endcase
