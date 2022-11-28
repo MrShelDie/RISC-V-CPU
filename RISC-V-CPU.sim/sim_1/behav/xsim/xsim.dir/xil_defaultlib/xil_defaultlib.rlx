@@ -5,7 +5,7 @@ Jun 14 2018
 D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.sim/sim_1/behav/xsim/glbl.v,1664697872,verilog,,,,glbl,,,,,,,,
 D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/ALU.v,1669559248,verilog,,D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v,D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/miriscv_defines.vh,alu,,,../../../../RISC-V-CPU.srcs/sources_1/new,,,,,
 D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/ALU_tb.v,1664714447,verilog,,,D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/miriscv_defines.vh,alu_tb,,,../../../../RISC-V-CPU.srcs/sources_1/new,,,,,
-D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v,1669587633,verilog,,D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/PC.v,,cpu,,,../../../../RISC-V-CPU.srcs/sources_1/new,,,,,
+D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU.v,1669624352,verilog,,D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/PC.v,,cpu,,,../../../../RISC-V-CPU.srcs/sources_1/new,,,,,
 D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU_tb.v,1669579828,verilog,,,,cpu_tb,,,../../../../RISC-V-CPU.srcs/sources_1/new,,,,,
 D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/PC.v,1669557925,verilog,,D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/RF.v,,pc_module,,,../../../../RISC-V-CPU.srcs/sources_1/new,,,,,
 D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/RF.v,1669558742,verilog,,D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/data_mem.v,,reg_file,,,../../../../RISC-V-CPU.srcs/sources_1/new,,,,,

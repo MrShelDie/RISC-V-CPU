@@ -34,10 +34,10 @@ module cpu(
   
   wire [31:0] data_mem_rd;
   
-  wire [31:0] imm_B = { 19'b0, instr[31],    instr[7],     instr[30:25], instr[11:8],  1'b0 };
-  wire [31:0] imm_J = { 11'b0, instr[31],    instr[19:12], instr[20],    instr[30:21], 1'b0 };
-  wire [31:0] imm_S = { 20'b0, instr[31:25], instr[11:7]                                    };
-  wire [31:0] imm_I = { 20'b0, instr[31:20]                                                 };
+  wire [31:0] imm_B = { { 20 { instr[31] } }, instr[7],     instr[30:25], instr[11:8],  1'b0 };
+  wire [31:0] imm_J = { { 12 { instr[31] } }, instr[19:12], instr[20],    instr[30:21], 1'b0 };
+  wire [31:0] imm_S = { { 21 { instr[31] } }, instr[30:25], instr[11:7]                      };
+  wire [31:0] imm_I = { { 21 { instr[31] } }, instr[30:20]                                   };
 
   pc_module pc_module(
     .clk_i     ( clk_i    ),
