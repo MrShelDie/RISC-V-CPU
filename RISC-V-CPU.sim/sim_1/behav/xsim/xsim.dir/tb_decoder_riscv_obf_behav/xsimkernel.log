@@ -1,7 +1,7 @@
-Running: xsim.dir/tb_decoder_riscv_obf_behav/xsimk.exe -simmode gui -wdb tb_decoder_riscv_obf_behav.wdb -simrunnum 0 -socket 52298
+Running: xsim.dir/tb_decoder_riscv_obf_behav/xsimk.exe -simmode gui -wdb tb_decoder_riscv_obf_behav.wdb -simrunnum 0 -socket 63934
 Design successfully loaded
-Design Loading Memory Usage: 5768 KB (Peak: 5768 KB)
-Design Loading CPU Usage: 15 ms
+Design Loading Memory Usage: 5796 KB (Peak: 5796 KB)
+Design Loading CPU Usage: 0 ms
 Simulation completed
-Simulation Memory Usage: 6644 KB (Peak: 6644 KB)
-Simulation CPU Usage: 30 ms
+Simulation Memory Usage: 8452 KB (Peak: 8452 KB)
+Simulation CPU Usage: 61 ms

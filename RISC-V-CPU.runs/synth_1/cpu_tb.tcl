@@ -38,8 +38,8 @@ read_verilog -library xil_defaultlib {
   D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/data_mem.v
   D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/decoder_riscv.v
   D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/instr_mem.v
-  D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU_tb.v
 }
+read_verilog D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/CPU_tb.v
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be
