@@ -97,7 +97,7 @@ module main_decoder(
                           end
                         end
         `STORE_OPCODE:  begin
-                          if ( fetched_instr_i[14] == 1'b1 || funct3 == 3'b011 )
+          if ( fetched_instr_i[14] == 1'b1 ||  fetched_instr_i[13 : 12] == 2'b11 )
                             illegal_instr_o <= 1;
                           else begin
                             ex_op_a_sel_o <= `OP_A_RS1;
