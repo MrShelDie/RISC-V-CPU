@@ -1,11 +1,11 @@
 `timescale 1ns / 1ps
 
-module cpu_tb;
+module miriscv_core_tb;
 
   reg         clk;
   reg         rst;
     
-  cpu cpu(
+  miriscv_core core(
     .clk_i ( clk ),
     .rst_i ( rst )
   );

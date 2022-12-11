@@ -2,11 +2,11 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Tue Nov 29 00:49:34 2022
-# Process ID: 14760
+# Start of session at: Sun Dec 11 22:49:28 2022
+# Process ID: 7696
 # Current directory: D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.runs/synth_1
-# Command line: vivado.exe -log cpu_tb.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu_tb.tcl
-# Log file: D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.runs/synth_1/cpu_tb.vds
+# Command line: vivado.exe -log tb_miriscv_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source tb_miriscv_top.tcl
+# Log file: D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.runs/synth_1/tb_miriscv_top.vds
 # Journal file: D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source cpu_tb.tcl -notrace
+source tb_miriscv_top.tcl -notrace

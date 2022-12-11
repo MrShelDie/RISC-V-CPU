@@ -3,6 +3,7 @@
 module pc_module(
   input             clk_i,
   input             rst_i,
+  input             en_n_i,
   
   input      [31:0] imm_I_i,
   input      [31:0] imm_J_i,
@@ -18,6 +19,8 @@ module pc_module(
   output reg [31:0] pc_o
 );
   
+  wire        en = ~en_n_i;
+  
   wire        cond_jmp = alu_flag_i && branch_i;
   wire        jmp_rel  = jal_i      || cond_jmp;
   
@@ -32,7 +35,7 @@ module pc_module(
   always @( posedge clk_i or posedge rst_i ) begin
     if ( rst_i )
       pc_o <= 32'd0;
-    else
+    else if ( en )
       pc_o <= new_pc;
   end
 
