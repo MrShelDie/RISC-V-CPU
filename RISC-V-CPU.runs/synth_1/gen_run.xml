@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1670788167">
-  <File Type="PA-TCL" Name="tb_miriscv_top.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="tb_miriscv_top_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="tb_miriscv_top_reports.tcl"/>
-  <File Type="RDS-RDS" Name="tb_miriscv_top.vds"/>
-  <File Type="RDS-UTIL" Name="tb_miriscv_top_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="tb_miriscv_top_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="tb_miriscv_top.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="tb_miriscv_top_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="tb_miriscv_top_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1671742794">
+  <File Type="PA-TCL" Name="csr.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="csr_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="csr_reports.tcl"/>
+  <File Type="RDS-RDS" Name="csr.vds"/>
+  <File Type="RDS-UTIL" Name="csr_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="csr_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="csr.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="csr_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="csr_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/csr.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/miriscv_defines.vh">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/ALU_RISC-V.srcs/sources_1/new/miriscv_defines.vh"/>
         <Attr Name="ImportTime" Val="1664697872"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -21,6 +29,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/ALU.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -28,6 +37,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/PC.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -35,6 +45,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/RF.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -42,6 +53,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/decoder_riscv.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -49,6 +61,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/miriscv_core.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -56,6 +69,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/miriscv_lsu.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -63,6 +77,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/miriscv_ram.sv">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -70,6 +85,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/miriscv_top.sv">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -78,6 +94,7 @@
     <File Path="$PSRCDIR/sources_1/new/tb_miriscv_top.v">
       <FileInfo>
         <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -150,7 +167,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="tb_miriscv_top"/>
+      <Option Name="TopModule" Val="csr"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
