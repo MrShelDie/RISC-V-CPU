@@ -4,6 +4,7 @@
 
 module main_decoder(
     input       [31:0]  fetched_instr_i,
+    input               int_i,
 
     output  reg [1:0]   ex_op_a_sel_o,
     output  reg [2:0]   ex_op_b_sel_o,
@@ -16,7 +17,10 @@ module main_decoder(
     output  reg         illegal_instr_o,
     output  reg         branch_o,
     output  reg         jal_o,
-    output  reg         jalr_o
+    output  reg [1:0]   jalr_o,
+    output  reg         int_rst_o,
+    output  reg [2:0]   csr_op_o,
+    output  reg         csr_o
 );
 
     wire [2:0] funct3 = fetched_instr_i[14:12];
@@ -33,9 +37,16 @@ module main_decoder(
         illegal_instr_o <= 1'b0;
         branch_o        <= 1'b0;
         jal_o           <= 1'b0;
-        jalr_o          <= 1'b0;
+        jalr_o          <= 2'b00;
+        csr_op_o		<= 3'b000;
+        csr_o           <= 1'b0;
+        int_rst_o       <= 1'b0;
 
-        if ( fetched_instr_i[1:0] != 2'b11 )
+        if ( int_i ) begin
+            csr_op_o <= `CSR_INT;
+            jalr_o   <= `JALR_MTVEC;
+        end
+        else if ( fetched_instr_i[1:0] != 2'b11 )
             illegal_instr_o <= 1;
         else begin
             case ( fetched_instr_i[6:2] )
@@ -70,7 +81,7 @@ module main_decoder(
                         alu_op_o      <= `ALU_ADD;
                         wb_src_sel_o  <= `WB_EX_RESULT;
                         gpr_we_a_o    <= 1'b1;
-                        jalr_o        <= 1'b1;
+                        jalr_o        <= 2'b01;
                     end
                 end
                 `BRANCH_OPCODE: begin
@@ -97,7 +108,7 @@ module main_decoder(
                     end
                 end
                 `STORE_OPCODE: begin
-                    if ( fetched_instr_i[14] == 1'b1 || funct3 == 3'b011 )
+                    if ( funct3[2] == 1'b1 || funct3[1:0] == 2'b11 )
                         illegal_instr_o <= 1;
                     else begin
                         ex_op_a_sel_o <= `OP_A_RS1;
@@ -123,7 +134,7 @@ module main_decoder(
                     end
                 end
                 `OP_OPCODE: begin
-                    if (fetched_instr_i[31:25] != 7'b000_0000 && fetched_instr_i[31:25] != 7'b010_0000)
+                    if ( fetched_instr_i[31:25] != 7'b000_0000 && fetched_instr_i[31:25] != 7'b010_0000 )
                         illegal_instr_o <= 1;
                     else begin
                         ex_op_a_sel_o <= `OP_A_RS1;
@@ -133,8 +144,18 @@ module main_decoder(
                         gpr_we_a_o    <= 1'b1;
                     end
                 end
+                `SYSTEM_OPCODE: begin
+                    if ( fetched_instr_i[31:7] == `MRET ) begin
+                        jalr_o    <= `JALR_MEPC;
+                        int_rst_o <= 1'b1;
+                    end
+                    else if ( funct3[2] == 1'b0 && funct3[1:0] != 2'b00 ) begin
+                        csr_op_o      <= funct3;
+                        gpr_we_a_o    <= 1'b1;
+                        csr_o         <= 1'b1;
+                    end
+                end
                 `MISC_MEM_OPCODE: begin end
-                `SYSTEM_OPCODE:   begin end
                 default:
                     illegal_instr_o <= 1;
             endcase

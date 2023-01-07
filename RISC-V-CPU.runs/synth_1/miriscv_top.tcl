@@ -17,7 +17,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_msg_config -id {Common 17-41} -limit 10000000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -29,8 +30,22 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo d:/VivadoProj/RISC-V-CPU/RISC-V-CPU.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
+read_verilog D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/miriscv_defines.vh
 read_mem D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/iram.mem
-read_verilog -library xil_defaultlib D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/csr.v
+read_verilog -library xil_defaultlib -sv {
+  D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/miriscv_ram.sv
+  D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/miriscv_top.sv
+}
+read_verilog -library xil_defaultlib {
+  D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/ALU.v
+  D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/PC.v
+  D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/RF.v
+  D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/csr.v
+  D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/decoder_riscv.v
+  D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/interrupt_controller.v
+  D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/miriscv_lsu.v
+}
+read_verilog D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/miriscv_core.v
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be
@@ -42,12 +57,12 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 set_param ips.enableIPCacheLiteLoad 0
 close [open __synthesis_is_running__ w]
 
-synth_design -top csr -part xc7a100tcsg324-1
+synth_design -top miriscv_top -part xc7a100tcsg324-1
 
 
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef csr.dcp
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file csr_utilization_synth.rpt -pb csr_utilization_synth.pb"
+write_checkpoint -force -noxdef miriscv_top.dcp
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file miriscv_top_utilization_synth.rpt -pb miriscv_top_utilization_synth.pb"
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]

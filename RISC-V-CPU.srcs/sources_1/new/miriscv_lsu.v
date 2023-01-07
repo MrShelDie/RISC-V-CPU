@@ -128,32 +128,33 @@ module miriscv_lsu(
     end
 
     always @( * ) begin
-        if ( lsu_we_i ) begin   // Write
-            case ( lsu_size_i )
-                `LDST_B:    data_wdata <= { 4 { lsu_data_i[7:0]  } };
-                `LDST_H:    data_wdata <= { 2 { lsu_data_i[15:0] } };
-                default:    data_wdata <= lsu_data_i[31:0];             // write word
-            endcase
-        end
-        else begin              // Read
-            case ( lsu_size_i )
-                `LDST_B:    lsu_data <= lsu_data_byte;   
-                `LDST_H:    lsu_data <= lsu_data_hw;
-                `LDST_BU:   lsu_data <= lsu_data_ubyte;
-                `LDST_HU:   lsu_data <= lsu_data_uhw;
-                default:    lsu_data <= data_rdata_i;                   // read word
-            endcase
-        end
+        data_wdata <= lsu_data_i[31:0];
+        lsu_data   <= data_rdata_i;
+
+        case ( lsu_size_i )
+            `LDST_B: begin
+                data_wdata <= { 4 { lsu_data_i[7:0]  } };
+                lsu_data   <= lsu_data_byte;
+            end
+            `LDST_H: begin
+                data_wdata <= { 2 { lsu_data_i[15:0] } };
+                lsu_data   <= lsu_data_hw;
+            end
+            `LDST_BU: begin
+                lsu_data <= lsu_data_ubyte;
+            end
+            `LDST_HU: begin
+                lsu_data <= lsu_data_uhw;
+            end
+        endcase
     end
 
     /* lsu_clk */
     always @( posedge clk_i or posedge rst ) begin
-        if ( rst ) begin
+        if ( rst )
             lsu_clk <= 0;
-        end
-        else if ( lsu_req_i ) begin
+        else if ( lsu_req_i )
             lsu_clk <= ~lsu_clk;
-        end
     end
 
 endmodule
