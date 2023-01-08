@@ -24,22 +24,22 @@ module interrupt_controller(
     reg             is_interrupt_reg;
     wire            is_interrupt = |selected_interrupt;
 
-	assign			counter_en = is_interrupt;
+	assign			counter_en = ~is_interrupt;
     assign          int_fin_o = selected_interrupt & { 32 { int_rst_i } };
     assign          int_o = is_interrupt ^ is_interrupt_reg;
     assign          mcause_o = { 27'b0, counter };
 
     /* Counter */
-    always @(posedge clk_i or posedge rst) begin
-        if (rst)
+    always @(posedge clk_i or posedge rst or posedge int_rst_i) begin
+        if (rst || int_rst_i)
             counter <= 5'b0;
         else if (counter_en)
             counter <= counter + 5'b1;
     end
 
     /* Interrupt register */
-    always @(posedge clk_i or posedge int_rst_i) begin
-        if (int_rst_i)
+    always @(posedge clk_i or posedge rst or posedge int_rst_i) begin
+        if (rst || int_rst_i)
             is_interrupt_reg <= 1'b0;
         else
             is_interrupt_reg <= is_interrupt;
