@@ -82,3 +82,7 @@
 !*.elf
 !*.bmm
 !*.xmp
+#########
+#Assembler-files
+#########
+!*.asm
