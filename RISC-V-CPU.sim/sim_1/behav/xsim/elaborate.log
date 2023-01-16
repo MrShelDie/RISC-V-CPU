@@ -1,11 +1,11 @@
 Vivado Simulator 2018.2
 Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: D:/Vivado/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 3c341c1737144da49197d1cfa7e0254b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L work -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_miriscv_top_behav work.tb_miriscv_top work.glbl -log elaborate.log 
+Running: D:/Vivado/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 3c341c1737144da49197d1cfa7e0254b --incr --debug typical --relax --mt 2 -L work -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_miriscv_top_behav work.tb_miriscv_top work.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
 Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/miriscv_top.sv" Line 3. Module miriscv_top(RAM_SIZE=1024,RAM_INIT_FILE="iram.mem") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/miriscv_top.sv" Line 3. Module miriscv_top(RAM_INIT_FILE="iram.mem") doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "D:/VivadoProj/RISC-V-CPU/RISC-V-CPU.srcs/sources_1/new/miriscv_ram.sv" Line 3. Module miriscv_ram(RAM_INIT_FILE="iram.mem") doesn't have a timescale but at least one module in design has a timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
@@ -15,10 +15,13 @@ Compiling module xil_defaultlib.main_decoder
 Compiling module xil_defaultlib.reg_file
 Compiling module xil_defaultlib.alu
 Compiling module xil_defaultlib.miriscv_lsu
-Compiling module xil_defaultlib.miriscv_core
-Compiling module xil_defaultlib.miriscv_ram(RAM_INIT_FILE="iram....
-Compiling module xil_defaultlib.interrupt_controller
-Compiling module xil_defaultlib.miriscv_top(RAM_SIZE=1024,RAM_IN...
+Compiling module work.miriscv_core
+Compiling module work.addr_decoder(RAM_SIZE=1024)
+Compiling module work.miriscv_ram(RAM_INIT_FILE="iram....
+Compiling module work.led_controller
+Compiling module work.button_controller
+Compiling module work.interrupt_controller
+Compiling module work.miriscv_top(RAM_INIT_FILE="iram....
 Compiling module work.tb_miriscv_top
 Compiling module work.glbl
 Built simulation snapshot tb_miriscv_top_behav

@@ -30,7 +30,7 @@ module interrupt_controller(
     assign          mcause_o = { 27'b0, counter };
 
     /* Counter */
-    always @(posedge clk_i or posedge rst or posedge int_rst_i) begin
+    always @(posedge clk_i or posedge rst) begin
         if (rst || int_rst_i)
             counter <= 5'b0;
         else if (counter_en)
@@ -38,7 +38,7 @@ module interrupt_controller(
     end
 
     /* Interrupt register */
-    always @(posedge clk_i or posedge rst or posedge int_rst_i) begin
+    always @(posedge clk_i or posedge rst) begin
         if (rst || int_rst_i)
             is_interrupt_reg <= 1'b0;
         else
